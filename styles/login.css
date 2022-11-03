@@ -35,4 +35,5 @@ figure {
 
 img {
     width: 70%;
+    min-width: 180px;
 }
