@@ -43,3 +43,8 @@ fieldset {
     border-style: none;
     padding: 10px;
 }
+
+label,
+input {
+    width: 100%;
+}
