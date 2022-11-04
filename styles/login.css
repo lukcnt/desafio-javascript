@@ -52,3 +52,8 @@ input {
     flex-direction: column;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
+label {
+    margin-bottom: 5px;
+    font-size: 1.08rem;
+}
