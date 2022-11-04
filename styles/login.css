@@ -38,3 +38,7 @@ img {
     min-width: 180px;
     padding: 10px;
 }
+
+fieldset {
+    border-style: none;
+}
