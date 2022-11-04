@@ -41,6 +41,7 @@ img {
 
 fieldset {
     border-style: none;
+    width: 100%;
     padding: 10px;
 }
 
