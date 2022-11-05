@@ -1,13 +1,13 @@
 {
-    "users": [
-        {
-          "user" : "Master",
-          "pws"  : "12345"
-        },
-        
-        {
-          "user" : "Marcelo",
-          "pws"  : "senha"
-        }
-    ] 
-  }
+  "users": [
+    {
+      "user" : "Master",
+      "pws"  : "12345"
+    },
+
+    {
+      "user" : "Marcelo",
+      "pws"  : "senha"
+    }
+  ]
+}
