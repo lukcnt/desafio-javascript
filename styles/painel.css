@@ -128,3 +128,21 @@ li:hover {
     justify-content: center;
     align-items: center;
 }
+
+#botao-novo-cliente,
+#botao-salvar-cliente {
+    width: 100px;
+    border: none;
+    border-radius: 5px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.2rem;
+    color: #FFFFFF;
+}
+
+#botao-novo-cliente {
+    background-color: rgb(93, 105, 219);
+}
+
+#botao-salvar-cliente {
+    background-color: rgb(2, 117, 2);
+}
