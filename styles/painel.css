@@ -97,3 +97,11 @@ li:hover {
 #nome-cliente {
     margin-bottom: 10px;
 }
+
+#menu-janela-clientes {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
