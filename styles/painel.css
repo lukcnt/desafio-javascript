@@ -64,3 +64,9 @@ li:hover {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 1.5rem;
 }
+
+.fechar {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #da0000;
+}
