@@ -81,3 +81,10 @@ li:hover {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 1.2rem;
 }
+
+#dados-clientes input{
+    height: 50px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bolder;
+    font-size: 1.7rem;
+}
