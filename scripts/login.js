@@ -16,6 +16,11 @@ async function buscarJson() {
     let url = "./json/usuario.json";
     let dadosFetch = await fetch(url);
     let dadosJson = await dadosFetch.json();
+    if(compararDados(dadosJson) == true){
+        window.location.href = "./panel.html";
+    } else {
+        alert("Usuário ou senha não encontrados");
+    };
 };
 
 botaoAcessar.addEventListener("click", function(){
