@@ -26,6 +26,7 @@ li {
     align-items: center;
     gap: 10px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 10px 10px 10px 20px;
 }
 
 li:hover {
