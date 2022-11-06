@@ -88,3 +88,8 @@ li:hover {
     font-weight: bolder;
     font-size: 1.7rem;
 }
+
+#codigo-cliente,
+#nome-cliente {
+    margin-bottom: 10px;
+}
