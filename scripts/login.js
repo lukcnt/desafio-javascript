@@ -3,5 +3,5 @@ const senha = document.querySelector("#senha");
 const botaoAcessar = document.querySelector("#botao-login");
 
 botaoAcessar.addEventListener("click", function(){
-    buscar();
+    buscarJson();
 });
