@@ -50,6 +50,8 @@ li:hover {
     height: auto;
     border: 2px solid #cfcfcf;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
 }
 
 #cabecalho-clientes {
