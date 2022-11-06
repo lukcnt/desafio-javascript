@@ -73,6 +73,10 @@ li:hover {
     color: #da0000;
 }
 
+#espaco-janelas form {
+    margin-bottom: 15px;
+}
+
 #dados-clientes {
     width: 100%;
     border-style: none;
