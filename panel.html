@@ -18,35 +18,37 @@
                 <li id="menu-pedidos"><span class="material-symbols-outlined">shopping_cart</span>Pedidos</li>
             </ul>
         </nav>
-        <section id="janela-clientes">
-            <header>
-                <h1>Clientes</h1>
-                <span class="material-symbols-outlined fechar">close</span>
-            </header>
-            <form>
-                <fieldset id="dados-clientes">
-                    <label for="codigo-cliente">Código</label>
-                    <input type="text" id="codigo-cliente" disabled="disabled">
-                    <label for="nome-cliente">Nome</label>
-                    <input type="text" id="nome-cliente">
-                    <label for="data-cadastro-cliente">Data de Cadastro</label>
-                    <input type="text" id="data-cadastro-cliente" disabled="disabled">
-                </fieldset>
-            </form>
-            <nav>
-                <div id="navegacao-lista-clientes">
-                    <button type="submit" id="botao-anterior">
-                        <span class="material-symbols-outlined icone-anterior">chevron_left</span>
-                    </button>
-                    <button type="submit" id="botao-proximo">
-                        <span class="material-symbols-outlined icone-proximo">chevron_right</span>
-                    </button>
-                </div>
-                <div id="cadastro-clientes">
-                    <button type="submit" id="botao-novo-cliente">Novo</button>
-                    <button type="submit" id="botao-salvar-cliente">Salvar</button>
-                </div>
-            </nav>
+        <section id="espaco-janelas">
+            <section id="janela-clientes">
+                <header>
+                    <h1>Clientes</h1>
+                    <span class="material-symbols-outlined fechar">close</span>
+                </header>
+                <form>
+                    <fieldset id="dados-clientes">
+                        <label for="codigo-cliente">Código</label>
+                        <input type="text" id="codigo-cliente" disabled="disabled">
+                        <label for="nome-cliente">Nome</label>
+                        <input type="text" id="nome-cliente">
+                        <label for="data-cadastro-cliente">Data de Cadastro</label>
+                        <input type="text" id="data-cadastro-cliente" disabled="disabled">
+                    </fieldset>
+                </form>
+                <nav>
+                    <div id="navegacao-lista-clientes">
+                        <button type="submit" id="botao-anterior">
+                            <span class="material-symbols-outlined icone-anterior">chevron_left</span>
+                        </button>
+                        <button type="submit" id="botao-proximo">
+                            <span class="material-symbols-outlined icone-proximo">chevron_right</span>
+                        </button>
+                    </div>
+                    <div id="cadastro-clientes">
+                        <button type="submit" id="botao-novo-cliente">Novo</button>
+                        <button type="submit" id="botao-salvar-cliente">Salvar</button>
+                    </div>
+                </nav>
+            </section>
         </section>
     </main>
 </body>
