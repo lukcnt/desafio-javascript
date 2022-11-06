@@ -119,3 +119,12 @@ li:hover {
     border-radius: 5px;
     text-align: center;
 }
+
+.icone-anterior,
+.icone-proximo {
+    color: white;
+    font-weight: bolder;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
