@@ -110,3 +110,12 @@ li:hover {
 #menu-janela-clientes button {
     height: 40px;
 }
+
+#botao-anterior,
+#botao-proximo {
+    width: 70px;
+    background-color: rgb(90, 0, 163);
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+}
