@@ -207,8 +207,8 @@ button:hover {
     border-right: none;
 }
 
-#localizar-produto-pedidos h3,
-#tabela-pedidos-container h3 {
+#localizar-produto-pedidos h2,
+#tabela-pedidos-container h2 {
     color: rgb(55, 55, 124);
     margin-bottom: 10px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
