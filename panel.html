@@ -49,6 +49,37 @@
                     </div>
                 </nav>
             </section>
+            <section id="janela-produtos">
+                <header id="cabecalho-produtos">
+                    <h1>Produtos</h1>
+                    <span class="material-symbols-outlined fechar">close</span>
+                </header>
+                <form>
+                    <fieldset id="dados-produtos">
+                        <label for="codigo-produto">Código</label>
+                        <input type="text" id="codigo-produto" disabled="disabled">
+                        <label for="descricao-produto">Descrição</label>
+                        <input type="text" id="descricao-produto">
+                        <label for="preco-produto">Preço</label>
+                        <input type="text" id="preco-produto">
+                        <label for="quantidade-produto">Quantidade</label>
+                        <input type="text" id="quantidade-produto">
+                    </fieldset>
+                </form>
+                <nav id="menu-janela-produtos">
+                    <div id="navegacao-lista-produtos">
+                        <button type="submit" id="botao-anterior-produto">
+                            <span class="material-symbols-outlined icone-anterior-produto">chevron_left</span>
+                        </button>
+                        <button type="submit" id="botao-proximo-produto">
+                            <span class="material-symbols-outlined icone-proximo-produto">chevron_right</span>
+                        </button>
+                    </div>
+                    <div id="cadastro-produtos">
+                        <button type="submit" id="botao-novo-produto">Novo</button>
+                        <button type="submit" id="botao-salvar-produto">Salvar</button>
+                    </div>
+                </nav>
         </section>
     </main>
 </body>
