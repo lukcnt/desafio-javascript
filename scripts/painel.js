@@ -8,7 +8,7 @@ function fecharJanela(className, event) {
             document.querySelector("#janela-clientes").style.display = "none";
             document.querySelector("#janela-produtos").style.display = "none";
             document.querySelector("#janela-pedidos").style.display = "none";
-        })
+        });
     }
 }
 
@@ -29,7 +29,7 @@ function abrirJanela(idName, event) {
                 document.querySelector("#janela-clientes").style.display = "none";
                 document.querySelector("#janela-produtos").style.display = "none";
             }
-        })
+        });
     }
 }
 
