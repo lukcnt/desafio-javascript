@@ -81,6 +81,52 @@
                     </div>
                 </nav>
             </section>
+            <section id="janela-pedidos">
+                <header id="cabecalho-pedidos">
+                    <h1>Pedidos</h1>
+                    <span class="material-symbols-outlined fechar">close</span>
+                </header>
+                <form>
+                    <fieldset id="dados-clientes-pedidos">
+                        <label for="codigo-cliente-pedidos">Código do Cliente</label>
+                        <input type="text" id="codigo-cliente-pedidos">
+                        <label for="nome-cliente-pedidos">Cliente</label>
+                        <input type="text" id="nome-cliente-pedidos">
+                    </fieldset>
+                    <fieldset id="localizar-produto-pedidos">
+                        <h3>Localizar produto</h3>
+                        <div>
+                            <input type="text" id="codigo-produto-pedidos">
+                            <input type="text" id="descricao-produto-pedidos" disabled="disabled">
+                            <input type="text" id="preco-produto-pedidos" disabled="disabled">
+                            <input type="text" id="quantidade-produto-pedidos">
+                            <button type="submit" id="botao-lancar-pedido">Lançar no Pedido</button>
+                        </div>
+                    </fieldset>
+                </form>
+                <div id="tabela-pedidos-container">
+                    <h3>Itens do Pedido</h3>
+                    <table id="tabela-pedidos">
+                        <tr>
+                            <th>Item</th>
+                            <th>Descrição</th>
+                            <th>Preço</th>
+                            <th>Qtd</th>
+                            <th>Sub Total</th>
+                        </tr>
+                        <tr id="linha-pedido-realizado">
+                            <td id="celula-item"></td>
+                            <td id="celula-descricao"></td>
+                            <td id="celula-preco"></td>
+                            <td id="celula-quantidade"></td>
+                            <td id="celula-subtotal"></td>
+                        </tr>
+                    </table>
+                </div>
+                <div id="valor-total-pedido">
+                    <h1></h1>
+                </div>
+            </section>
         </section>
     </main>
 </body>
