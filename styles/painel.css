@@ -50,7 +50,7 @@ li:hover {
     height: auto;
     border: 2px solid #cfcfcf;
     padding: 20px;
-    display: flex;
+    display: none;
     flex-direction: column;
 }
 
