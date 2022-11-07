@@ -8,9 +8,9 @@ function fecharJanela(className, event) {
             document.querySelector("#janela-clientes").style.display = "none";
             document.querySelector("#janela-produtos").style.display = "none";
             document.querySelector("#janela-pedidos").style.display = "none";
-        });
-    };
-};
+        })
+    }
+}
 
 function abrirJanela(idName, event) {
     let list = document.querySelectorAll(idName);
@@ -28,10 +28,10 @@ function abrirJanela(idName, event) {
                 document.querySelector("#janela-pedidos").style.display = "flex";
                 document.querySelector("#janela-clientes").style.display = "none";
                 document.querySelector("#janela-produtos").style.display = "none";
-            };
-        });
-    };
-};
+            }
+        })
+    }
+}
 
 abrirJanela("#menu li", "click");
 fecharJanela('.fechar', 'click');
