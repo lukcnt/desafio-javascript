@@ -5,6 +5,8 @@ let fecharJanela = document.querySelectorAll(".fechar");
 let abrirJanela = document.querySelectorAll("#menu li");
 const proximoCliente = document.querySelector("#botao-proximo");
 const anteriorCliente = document.querySelector("#botao-anterior");
+const botaoNovoCliente = document.querySelector("#botao-novo-cliente");
+const botaoSalvarCliente = document.querySelector("#botao-salvar-cliente");
 var clientesIndex = 1;
 
 for(let i = 0; i < fecharJanela.length; i++) {
@@ -34,6 +36,13 @@ for(let i = 0; i < abrirJanela.length; i++) {
     });
 }
 
+function dadosIniciaisCliente(){
+    clientesIndex = 1;
+    document.querySelector("#codigo-cliente").value = clientes[0].codCliente;
+    document.querySelector("#nome-cliente").value = clientes[0].nomeCliente;
+    document.querySelector("#data-cadastro-cliente").value = clientes[0].dataCadCli;
+}
+
 function listarClientes(){
     if(clientesIndex > clientes.length || clientesIndex <= 0){
         dadosIniciaisCliente();
@@ -51,13 +60,6 @@ function listarClientes(){
     }
 }
 
-function dadosIniciaisCliente(){
-    clientesIndex = 1;
-    document.querySelector("#codigo-cliente").value = clientes[0].codCliente;
-    document.querySelector("#nome-cliente").value = clientes[0].nomeCliente;
-    document.querySelector("#data-cadastro-cliente").value = clientes[0].dataCadCli;
-}
-
 proximoCliente.addEventListener("click", function(){
     clientesIndex += 1;
     listarClientes();
@@ -67,3 +69,26 @@ anteriorCliente.addEventListener("click", function(){
     clientesIndex -= 1;
     listarClientes();
 })
+
+function novoCliente(){
+    document.querySelector("#codigo-cliente").value = clientes.length + 1;
+    document.querySelector("#nome-cliente").value = "";
+    let dataDeCadastro = new Date();
+    let dataDeCadastroCorreta = dataDeCadastro.toLocaleDateString("pt-BR");
+    document.querySelector("#data-cadastro-cliente").value = dataDeCadastroCorreta;
+}
+
+botaoSalvarCliente.addEventListener("click", function(){
+    let novoCadastro = {
+        "codCliente":"",
+        "nomeCliente":"",
+        "dataCadCli":"",
+    };
+    novoCadastro.codCliente = parseInt(document.querySelector("#codigo-cliente").value);
+    novoCadastro.nomeCliente = document.querySelector("#nome-cliente").value;
+    novoCadastro.dataCadCli = document.querySelector("#data-cadastro-cliente").value;
+    clientes.push(novoCadastro);
+    dadosIniciaisCliente()
+});
+
+botaoNovoCliente.addEventListener("click", novoCliente);
