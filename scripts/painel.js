@@ -237,5 +237,6 @@ function valorTotal(){
     for(let subtotal of subtotal1){
         valorFinal += parseFloat(subtotal.textContent);
     }
-    document.querySelector("#valor-total-pedido").value = valorFinal;
+    console.log(valorFinal);
+    document.querySelector("#valor-total-pedido").innerHTML = "Valor Total: R$" + valorFinal.toFixed(2);
 }
