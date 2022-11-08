@@ -11,8 +11,12 @@ const proximoProduto = document.querySelector("#botao-proximo-produto");
 const anteriorProduto = document.querySelector("#botao-anterior-produto");
 const botaoNovoProduto = document.querySelector("#botao-novo-produto");
 const botaoSalvarProduto = document.querySelector("#botao-salvar-produto");
+const selecionarClientePedidos = document.querySelector("#codigo-cliente-pedidos");
+const selecionarProdutoPedidos = document.querySelector("#codigo-produto-pedidos");
+const botaoLancarPedido = document.querySelector("#botao-lancar-pedido");
 var clientesIndex = 1;
 var produtosIndex = 1;
+var listaPedido = [];
 
 for(let i = 0; i < fecharJanela.length; i++) {
     fecharJanela[i].addEventListener("click", function() {
@@ -93,6 +97,23 @@ function listarProdutos(){
     }
 }
 
+selecionarClientePedidos.addEventListener("blur", function(){
+    for(let cliente of clientes){
+        if(cliente.codCliente == document.querySelector("#codigo-cliente-pedidos").value){
+            document.querySelector("#nome-cliente-pedidos").value = cliente.nomeCliente;
+        }
+    }
+})
+
+selecionarProdutoPedidos.addEventListener("blur", function(){
+    for(let produto of produtos){
+        if(produto.codProduto == document.querySelector("#codigo-produto-pedidos").value){
+            document.querySelector("#descricao-produto-pedidos").value = produto.descProduto;
+            document.querySelector("#preco-produto-pedidos").value = produto.precoProduto;
+        }
+    }
+})
+
 proximoCliente.addEventListener("click", function(){
     clientesIndex += 1;
     listarClientes();
@@ -159,3 +180,62 @@ botaoSalvarProduto.addEventListener("click", function(){
 botaoNovoCliente.addEventListener("click", novoCliente);
 
 botaoNovoProduto.addEventListener("click", novoProduto);
+
+botaoLancarPedido.addEventListener("click", function(){
+    for(let produto of produtos){
+        if(produto.codProduto == document.querySelector("#codigo-produto-pedidos").value){
+            var itemPedido = document.querySelector("#codigo-produto-pedidos").value;
+            var descricaoPedido = produto.descProduto;
+            var precoPedido = produto.precoProduto;
+        }
+    }
+    let produtoR = produtoRepetido();
+    let temEst = temEstoque();
+
+    if(produtoR == false && temEst == true){
+        listaPedido.push(itemPedido);
+        let itemTabela = document.createElement("p");
+        let descricaoTabela = document.createElement("p");
+        let precoTabela = document.createElement("p");
+        let quantidadeTabela = document.createElement("p");
+        let subtotalTabela = document.createElement("p");
+        document.querySelector("#celula-item").appendChild(itemTabela).textContent = itemPedido;
+        document.querySelector("#celula-descricao").appendChild(descricaoTabela).textContent = descricaoPedido;
+        document.querySelector("#celula-preco").appendChild(precoTabela).textContent = precoPedido.toFixed(2);
+        document.querySelector("#celula-quantidade").appendChild(quantidadeTabela).textContent = document.querySelector("#quantidade-produto-pedidos").value;
+        document.querySelector("#celula-subtotal").appendChild(subtotalTabela).setAttribute("class", "ccvSubtotal");
+        document.querySelector("#celula-subtotal").appendChild(subtotalTabela).textContent = (precoPedido * document.querySelector("#quantidade-produto-pedidos").value).toFixed(2);
+    }
+    valorTotal();
+})
+
+function produtoRepetido(){
+    if(listaPedido.indexOf(document.querySelector("#codigo-produto-pedidos").value) !== -1){
+        alert("O item já está no pedido");
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function temEstoque(){
+    for(let produto of produtos){
+        if(produto.codProduto == document.querySelector("#codigo-produto-pedidos").value){
+            var estoquePedido = produto.qtdEstoqueProd;
+        }
+    }
+    if(document.querySelector("#quantidade-produto-pedidos").value > estoquePedido){
+        alert("Esse item não possui a quantidade solicitada");
+    } else {
+        return true;
+    }
+}
+
+function valorTotal(){
+    let subtotal1 = document.querySelectorAll(".ccvSubtotal");
+    let valorFinal = 0;
+    for(let subtotal of subtotal1){
+        valorFinal += parseFloat(subtotal.textContent);
+    }
+    document.querySelector("#valor-total-pedido").value = valorFinal;
+}
