@@ -7,7 +7,12 @@ const proximoCliente = document.querySelector("#botao-proximo");
 const anteriorCliente = document.querySelector("#botao-anterior");
 const botaoNovoCliente = document.querySelector("#botao-novo-cliente");
 const botaoSalvarCliente = document.querySelector("#botao-salvar-cliente");
+const proximoProduto = document.querySelector("#botao-proximo-produto");
+const anteriorProduto = document.querySelector("#botao-anterior-produto");
+const botaoNovoProduto = document.querySelector("#botao-novo-produto");
+const botaoSalvarProduto = document.querySelector("#botao-salvar-produto");
 var clientesIndex = 1;
+var produtosIndex = 1;
 
 for(let i = 0; i < fecharJanela.length; i++) {
     fecharJanela[i].addEventListener("click", function() {
@@ -28,6 +33,7 @@ for(let i = 0; i < abrirJanela.length; i++) {
             document.querySelector("#janela-produtos").style.display = "flex";
             document.querySelector("#janela-clientes").style.display = "none";
             document.querySelector("#janela-pedidos").style.display = "none";
+            dadosIniciaisProdutos()
         } else {
             document.querySelector("#janela-pedidos").style.display = "flex";
             document.querySelector("#janela-clientes").style.display = "none";
@@ -41,6 +47,14 @@ function dadosIniciaisCliente(){
     document.querySelector("#codigo-cliente").value = clientes[0].codCliente;
     document.querySelector("#nome-cliente").value = clientes[0].nomeCliente;
     document.querySelector("#data-cadastro-cliente").value = clientes[0].dataCadCli;
+}
+
+function dadosIniciaisProdutos(){
+    produtosIndex = 1;
+    document.querySelector("#codigo-produto").value = produtos[0].codProduto;
+    document.querySelector("#descricao-produto").value = produtos[0].descProduto;
+    document.querySelector("#preco-produto").value = produtos[0].precoProduto;
+    document.querySelector("#quantidade-produto").value = produtos[0].qtdEstoqueProd;
 }
 
 function listarClientes(){
@@ -60,6 +74,25 @@ function listarClientes(){
     }
 }
 
+function listarProdutos(){
+    if(produtosIndex > produtos.length || produtosIndex <= 0){
+        dadosIniciaisProdutos();
+        alert("Fim do registro");
+    } else {
+        for(let produto of produtos){
+            if(produto.codProduto == produtosIndex){
+                var descricaoProduto = produto.descProduto;
+                var precoProduto = produto.precoProduto;
+                var quantidadeEstoque = produto.qtdEstoqueProd;
+            }
+        }
+        document.querySelector("#codigo-produto").value = produtosIndex;
+        document.querySelector("#descricao-produto").value = descricaoProduto;
+        document.querySelector("#preco-produto").value = precoProduto;
+        document.querySelector("#quantidade-produto").value = quantidadeEstoque;
+    }
+}
+
 proximoCliente.addEventListener("click", function(){
     clientesIndex += 1;
     listarClientes();
@@ -70,12 +103,29 @@ anteriorCliente.addEventListener("click", function(){
     listarClientes();
 })
 
+proximoProduto.addEventListener("click", function(){
+    produtosIndex += 1;
+    listarProdutos();
+})
+
+anteriorProduto.addEventListener("click", function(){
+    produtosIndex -= 1;
+    listarProdutos();
+})
+
 function novoCliente(){
     document.querySelector("#codigo-cliente").value = clientes.length + 1;
     document.querySelector("#nome-cliente").value = "";
     let dataDeCadastro = new Date();
     let dataDeCadastroCorreta = dataDeCadastro.toLocaleDateString("pt-BR");
     document.querySelector("#data-cadastro-cliente").value = dataDeCadastroCorreta;
+}
+
+function novoProduto(){
+    document.querySelector("#codigo-produto").value = produtos.length + 1;
+    document.querySelector("#descricao-produto").value = "";
+    document.querySelector("#preco-produto").value = "";
+    document.querySelector("#quantidade-produto").value = "";
 }
 
 botaoSalvarCliente.addEventListener("click", function(){
@@ -91,4 +141,21 @@ botaoSalvarCliente.addEventListener("click", function(){
     dadosIniciaisCliente()
 });
 
+botaoSalvarProduto.addEventListener("click", function(){
+    let novoProduto = {
+        "codProduto" : "",
+        "descProduto" : "",
+        "precoProduto" : "",
+        "qtdEstoqueProd" : "",
+    };
+    novoProduto.codProduto = parseInt(document.querySelector("#codigo-produto").value);
+    novoProduto.descProduto = document.querySelector("#descricao-produto").value;
+    novoProduto.precoProduto = parseFloat(document.querySelector("#preco-produto").value);
+    novoProduto.qtdEstoqueProd = parseInt(document.querySelector("#quantidade-produto").value);
+    produtos.push(novoProduto);
+    dadosIniciaisProdutos();
+})
+
 botaoNovoCliente.addEventListener("click", novoCliente);
+
+botaoNovoProduto.addEventListener("click", novoProduto);
