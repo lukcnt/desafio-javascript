@@ -263,16 +263,20 @@ button:hover {
     font-size: 1.2rem;
 }
 
-#valor-total-pedido {
+#h1-container {
     width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: right;
 }
 
-#valor-total-pedido h1 {
+#valor-total-pedido {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: #da0000;
     background-color: #cfcfcf;
     font-size: 1.5rem;
+}
+
+p {
+    text-align: center;
 }
